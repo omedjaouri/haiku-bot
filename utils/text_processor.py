@@ -58,7 +58,6 @@ class TextProcessor():
         self.dictionary.summary()
         print("Created a dictionary with {} entries.".format(self.dictionary.size()))
 
-
         return
 
     #Cleans up a line of a screenplay

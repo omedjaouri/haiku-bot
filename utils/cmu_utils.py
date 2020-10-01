@@ -15,7 +15,7 @@ class Entry():
 
 
 def load_cmu_dict(dict_path):
-    syllable_dicts = {}
+    syllable_dict = {}
     dict_path = os.path.abspath(dict_path)
     #Open the dictionary
     with open(dict_path, encoding="ISO-8859-1") as cmu_dict:
@@ -34,14 +34,10 @@ def load_cmu_dict(dict_path):
             #Add the word and associated phonemes to the dict.
             syllable_count = count_syllables(phonemes)
             entry = Entry(phonemes, syllable_count)
-            #If we haven't gotten a certain syllable count before, create a new dict.
-            if not(str(syllable_count) in syllable_dicts.keys()):
-                syllable_dicts[str(syllable_count)] = {}
-            #Write to that dict
-            syllable_dicts[str(syllable_count)][word] = entry
+            syllable_dict[word.lower()] = entry
 
     #Return the dicts
-    return syllable_dicts
+    return syllable_dict
 
 #Count the number of stresses and unstresses in a phoneme list.
 def count_syllables(phonemes):

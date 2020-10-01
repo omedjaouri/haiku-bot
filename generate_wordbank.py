@@ -26,3 +26,6 @@ if __name__ == "__main__":
     #Read the text file with the text processor
     text_processor = TextProcessor(filepath=filepath, text_type=args.text_type)
 
+
+
+
