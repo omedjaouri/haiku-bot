@@ -1,3 +1,5 @@
+import os
+
 '''
 
 Contains various useful functions for handling the CMU Phoneme Dictionary
@@ -14,6 +16,7 @@ class Entry():
 
 def load_cmu_dict(dict_path):
     syllable_dicts = {}
+    dict_path = os.path.abspath(dict_path)
     #Open the dictionary
     with open(dict_path, encoding="ISO-8859-1") as cmu_dict:
         #Iterate through the lines, extracting the valid entries

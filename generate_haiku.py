@@ -46,5 +46,9 @@ def generate_line(syllable_count):
         line.append(word)
     return " ".join(line)
 
-#Generate a haiku
-print(generate_haiku_basic())
+
+if __name__=="__main__":
+    #Generate cmu syllable/phoneme dictionary
+    dataset = load_cmu_dict("data/cmudict")
+    #Print out a basic haiku
+    print(generate_haiku_basic())
